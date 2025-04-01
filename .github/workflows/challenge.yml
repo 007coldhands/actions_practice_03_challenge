@@ -1,7 +1,7 @@
 on: [push]
 
 env:
-  ARTIFACT_NAME: 'the_artifact'
+  ARTIFACT_NAME: the_artifact
 
 jobs:
   build:
