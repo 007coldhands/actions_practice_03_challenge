@@ -12,10 +12,10 @@ jobs:
 
       - name: Create artifact
         run: |
-          echo Context of the artifact >> ./${{ ARTIFACT_NAME }}
+          echo Context of the artifact >> ./${{ env.ARTIFACT_NAME }}
         
       - name: Upload artifact
         uses: actions/upload-artifact@v4.6.2
         with:
           name: artifact
-          path: ./${{ ARTIFACT_NAME }}
+          path: ./${{ env.ARTIFACT_NAME }}
