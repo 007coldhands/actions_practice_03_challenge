@@ -1,0 +1,21 @@
+on: [push]
+
+env:
+  ARTIFACT_NAME: 'the_artifact'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:    
+      - name: Check out code
+        uses: actions/checkout@v1
+
+      - name: Create artifact
+        run: |
+          echo Context of the artifact >> ./${{ ARTIFACT_NAME }}
+        
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: artifact
+          path: ./${{ ARTIFACT_NAME }}
